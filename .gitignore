@@ -4,3 +4,4 @@
 .rspec
 Gemfile.lock
 pkg/*
+spec/config/database.yml
