@@ -1,6 +1,6 @@
 # This example shows what should be included in your database.yml.
-# The connector is decided in the tests rather than the yml.
 database: foreigner-matcher_test
+adapter:  mysql2
 username: user
 password: password
 host:     localhost
