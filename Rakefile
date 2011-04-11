@@ -20,12 +20,11 @@ namespace :db do
         print "done\n"
       end
 
-      puts "Establishing connection with mysql2 connector..."
+      puts "Establishing connection to test db..."
       db_config = YAML::load(File.open("#{File.dirname(__FILE__)}/spec/config/database.yml"))
-      db_config['adapter'] = 'mysql2'
       ActiveRecord::Base.establish_connection(db_config)
       conn = ActiveRecord::Base.connection
-      puts "Connected to #{db_config['database']} via a mysql2 connector"
+      puts "Connected to #{db_config['database']} via a #{db_config['adapter']} connector"
 
       puts "\nDropping test tables, if they exist"
       %w( user_logins user_types comments searches special_user_records table_without_foreign_keys users ).each do |test_table|
