@@ -22,5 +22,6 @@ describe SpecialUserRecord do
 
   describe 'matcher' do
     it { should have_foreign_key_for(:user, :column => "special_user_id", :name => "special_user_records_special_user_id_fk", :dependent => :delete) }
+    it { should have_foreign_key_for(:users, :column => "special_user_id", :name => "special_user_records_special_user_id_fk", :dependent => :delete) }
   end
 end

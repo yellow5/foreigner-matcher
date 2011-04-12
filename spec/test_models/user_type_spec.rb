@@ -22,5 +22,6 @@ describe UserType do
 
   describe 'matcher' do
     it { should have_foreign_key_for(:user) }
+    it { should have_foreign_key_for(:users) }
   end
 end

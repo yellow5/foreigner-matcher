@@ -22,5 +22,6 @@ describe Search do
 
   describe 'matcher' do
     it { should have_foreign_key_for(:user, :name => "user_search_special_fk", :dependent => :delete) }
+    it { should have_foreign_key_for(:users, :name => "user_search_special_fk", :dependent => :delete) }
   end
 end

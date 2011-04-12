@@ -22,5 +22,6 @@ describe Comment do
 
   describe 'matcher' do
     it { should have_foreign_key_for(:user, :dependent => :delete) }
+    it { should have_foreign_key_for(:users, :dependent => :delete) }
   end
 end
