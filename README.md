@@ -1,6 +1,6 @@
 # foreigner-matcher
 
-RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner).
+RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner), inspired by [Remarkable](https://github.com/remarkable/remarkable) ActiveRecord matchers.
 
 ## Installation
 
