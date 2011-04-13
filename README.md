@@ -4,6 +4,16 @@ RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner
 
 ## Installation
 
+For installation with bundler, add the following to the approrpriate group in your Gemfile:
+
+    gem "foreigner-matcher"
+
+For installation without bundler in Rails 2.3, add the following to your config/environments/test.rb:
+
+    config.gem "foreigner-matcher"
+
+To install the gem the old fashioned way:
+
     gem install foreigner-matcher
 
 ## Usage
