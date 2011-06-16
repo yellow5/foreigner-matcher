@@ -1,4 +1,3 @@
-require 'ruby-debug'
 require 'yaml'
 require 'active_record'
 require 'foreigner-matcher'
