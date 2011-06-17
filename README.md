@@ -46,6 +46,13 @@ In addition to the table name, you can include any options that add_foreign_key 
 
 These examples will also work passing <tt>:user</tt> as the table name. Why? The example has a <tt>belongs_to</tt> relationship, and my feeling is that it reads better to say "it should have foreign key for user". This is just my taste; use what makes sense to you!
 
+## My Testing Environment
+
+Specs have been run with [Ruby 1.9.2p180](http://www.ruby-lang.org/) and [Ruby Enterprise Edition 2011.03](http://www.rubyenterpriseedition.com/) with the following combinations:
+
+* ActiveRecord ~> 3.0.0, Rspec ~> 2.6.0
+* ActiveRecord ~> 2.3.11, Rsepc ~> 1.3.2
+
 ## Copyright
 
 Copyright (c) 2011 Cameron Dykes. See LICENSE.txt for further details.
