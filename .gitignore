@@ -2,7 +2,6 @@
 .bundle
 .rvmrc
 .rspec
-Gemfile.lock
 pkg/*
 doc/*
 spec/config/database.yml
