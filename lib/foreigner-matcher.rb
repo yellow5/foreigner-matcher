@@ -13,16 +13,16 @@ module ForeignerMatcher # :nodoc:
 
     def description
       desc  = "have a foreign key for #{@parent}"
-      desc += " with #{@options.inspect}" unless @options.empty?
+      desc += " with #{ordered_options}" unless @options.empty?
       desc
     end
 
     def failure_message_for_should
-      "expected #{child_foreign_keys} to include #{foreign_key_definition}"
+      "expected #{display_child_foreign_keys} to include #{foreign_key_definition}"
     end
 
     def failure_message_for_should_not
-      "expected #{child_foreign_keys} to exclude #{foreign_key_definition}"
+      "expected #{display_child_foreign_keys} to exclude #{foreign_key_definition}"
     end
 
     private
@@ -36,6 +36,19 @@ module ForeignerMatcher # :nodoc:
 
     def child_foreign_keys
       @child.connection.foreign_keys(@child.class.table_name)
+    end
+
+    def ordered_options
+      ordered = @options.to_a.sort { |a,b| a[0].to_s <=> b[0].to_s }
+      display = "{"
+      display << ordered.collect { |opt| "#{opt[0].inspect}=>#{opt[1].inspect}" }.join(', ')
+      display << "}"
+      display
+    end
+
+    def display_child_foreign_keys
+      fks = child_foreign_keys
+      fks.empty? ? 'foreign keys' : fks
     end
   end
 

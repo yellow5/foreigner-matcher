@@ -10,12 +10,12 @@ describe TableWithoutForeignKey do
 
     it 'should set failure_message_for_should message' do
       matcher.matches?(subject)
-      matcher.failure_message_for_should.should == "expected  to include #{Foreigner::ConnectionAdapters::ForeignKeyDefinition.new('table_without_foreign_keys', 'users', :primary_key => 'id', :column => 'user_id', :name => 'table_without_foreign_keys_user_id_fk')}"
+      matcher.failure_message_for_should.should == "expected foreign keys to include #{Foreigner::ConnectionAdapters::ForeignKeyDefinition.new('table_without_foreign_keys', 'users', :primary_key => 'id', :column => 'user_id', :name => 'table_without_foreign_keys_user_id_fk')}"
     end
 
     it 'should set failure_message_for_should_not message' do
       matcher.matches?(subject)
-      matcher.failure_message_for_should_not.should == "expected  to exclude #{Foreigner::ConnectionAdapters::ForeignKeyDefinition.new('table_without_foreign_keys', 'users', :primary_key => 'id', :column => 'user_id', :name => 'table_without_foreign_keys_user_id_fk')}"
+      matcher.failure_message_for_should_not.should == "expected foreign keys to exclude #{Foreigner::ConnectionAdapters::ForeignKeyDefinition.new('table_without_foreign_keys', 'users', :primary_key => 'id', :column => 'user_id', :name => 'table_without_foreign_keys_user_id_fk')}"
     end
   end
 
