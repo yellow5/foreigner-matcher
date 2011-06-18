@@ -42,7 +42,7 @@ The spec would look like this:
       it { should have_foreign_key_for(:users) }
     end
 
-In addition to the table name, you can include any options that add_foreign_key (see [Foreigner](https://github.com/matthuhiggins/foreigner)) accepts. Some more examples using the same models:
+In addition to the table name, you can include any options that <tt>add\_foreign\_key</tt> (see [Foreigner](https://github.com/matthuhiggins/foreigner)) accepts. Some more examples using the same models:
 
     it { should have_foreign_key_for(:users, :dependent => :delete) }
     it { should have_foreign_key_for(:users, :column => "unique_user_id", :name => "user_logins_unique_user_id_fk") }
@@ -50,7 +50,7 @@ In addition to the table name, you can include any options that add_foreign_key 
 
 **A Note on Table Names**
 
-These examples will also work passing <tt>:user</tt> as the table name. Why? The example has a <tt>belongs_to</tt> relationship, and my feeling is that it reads better to say "it should have foreign key for user". This is just my taste; use what makes sense to you!
+These examples will also work passing <tt>:user</tt> as the table name. Why? The example has a <tt>belongs\_to</tt> relationship, and my feeling is that it reads better to say &quot;it should have foreign key for user&quot;. This is just my taste; use what makes sense to you!
 
 ## My Testing Environment
 
