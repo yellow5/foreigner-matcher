@@ -69,7 +69,7 @@ module ForeignerMatcher # :nodoc:
   #   it { should_not have_foreign_key_for(:users, :dependent => :nullify) }
 
   def have_foreign_key_for(parent, options={})
-    ForeignerMatcher::HaveForeignKeyFor.new(parent, options)
+    HaveForeignKeyFor.new(parent, options)
   end
 
 end
