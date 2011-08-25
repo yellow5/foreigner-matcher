@@ -6,3 +6,4 @@ pkg/*
 doc/*
 spec/config/database.yml
 *.swp
+*.rbc
