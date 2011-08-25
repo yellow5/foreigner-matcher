@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    foreigner-matcher (0.0.2)
+    foreigner-matcher (0.1.1)
       foreigner (~> 0.9.1)
 
 GEM
