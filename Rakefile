@@ -7,6 +7,7 @@ namespace :db do
     task :reset do
       require 'yaml'
       require 'active_record'
+      require 'rails/railtie'
 
       def print_table_creation(new_table)
         print "\tCreating #{new_table}..."
@@ -54,6 +55,9 @@ namespace :db do
       end
 
       require 'foreigner'
+      foreigner_railtie = Foreigner::Railtie.new
+      foreigner_railtie.run_initializers(foreigner_railtie)
+
       puts "\nCreating foreign keys"
       print_foreign_key_creation('user_logins') { conn.add_foreign_key(:user_logins, :users, :dependent => :nullify) }
       print_foreign_key_creation('user_types') { conn.add_foreign_key(:user_types, :users, :dependent => :restrict) }
