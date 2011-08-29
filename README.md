@@ -2,15 +2,31 @@
 
 RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner), inspired by [Remarkable](https://github.com/remarkable/remarkable) ActiveRecord matchers.
 
+## Version Information
+
+Note that the matcher is exactly the same between ~> 0.1 and ~> 0.2; all that changes is the Foreigner dependency. Why, you ask? Foreigner >= 1.0.0 is Rails 3 only!
+
+**Rails 3**
+
+Foreigner >= 1.0.0 use foreigner-matcher ~> 0.2
+
+Foreigner ~> 0.9 use foreigner-matcher ~> 0.1
+
+**Rails 2.3**
+
+Use foreigner-matcher ~> 0.1
+
 ## Installation
+
+*Please check the Version Information for the appropriate version!*
 
 For installation with bundler, add the following to the approrpriate group in your Gemfile:
 
-    gem "foreigner-matcher", :require => nil
+    gem "foreigner-matcher", "~> 0.2", :require => nil
 
 For installation without bundler in Rails 2.3, add the following to your config/environments/test.rb:
 
-    config.gem "foreigner-matcher", :require => nil
+    config.gem "foreigner-matcher", "~> 0.1.1", :require => nil
 
 To install the gem the old fashioned way:
 
@@ -56,8 +72,8 @@ These examples will also work passing <tt>:user</tt> as the table name. Why? The
 
 Specs have been run with [Ruby 1.9.2p290](http://www.ruby-lang.org/) and [Ruby Enterprise Edition 2011.03](http://www.rubyenterpriseedition.com/) with the following combinations:
 
-* ActiveRecord ~> 3.0.0, Rspec ~> 2.6.0
-* ActiveRecord ~> 2.3.11, Rsepc ~> 1.3.2
+* ActiveRecord ~> 3.0.0, Rspec ~> 2.6.0, Foreigner >= 1.0.0
+* ActiveRecord ~> 2.3.11, Rsepc ~> 1.3.2, Foreigner ~> 0.9.1
 
 ## Copyright
 
