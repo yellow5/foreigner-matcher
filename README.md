@@ -52,6 +52,18 @@ For example. Given these two models:
       belongs_to user
     end
 
+And given this migration for the foreign key:
+
+    class ChangeUserIdToForeignKeyOnUserLogins < ActiveRecord::Migration
+      def self.up
+        add_foreign_key :user_logins, :users
+      end
+
+      def self.down
+        remove_foreign_key :user_logins, :users
+      end
+    end
+
 The spec would look like this:
 
     describe UserLogin do
