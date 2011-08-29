@@ -70,7 +70,7 @@ These examples will also work passing <tt>:user</tt> as the table name. Why? The
 
 ## My Testing Environment
 
-Specs have been run with [Ruby 1.9.2p290](http://www.ruby-lang.org/) and [Ruby Enterprise Edition 2011.03](http://www.rubyenterpriseedition.com/) with the following combinations:
+Specs have been run with [Ruby 1.9.2p290](http://www.ruby-lang.org/), [Ruby Enterprise Edition 2011.03](http://www.rubyenterpriseedition.com/), and [Rubinius](http://rubini.us/) with the following combinations:
 
 * ActiveRecord ~> 3.0.0, Rspec ~> 2.6.0, Foreigner >= 1.0.0
 * ActiveRecord ~> 2.3.11, Rsepc ~> 1.3.2, Foreigner ~> 0.9.1
