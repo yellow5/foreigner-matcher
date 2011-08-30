@@ -4,17 +4,17 @@ RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner
 
 ## Version Information
 
-Note that the matcher is exactly the same between ~> 0.1 and ~> 0.2; all that changes is the Foreigner dependency. Why, you ask? Foreigner >= 1.0.0 is Rails 3 only!
+Note that the matcher is exactly the same between 0.1.1 and 0.2.0; all that changes is the Foreigner dependency. Why, you ask? Foreigner >= 1.0.0 is Rails 3 only!
 
 **Rails 3**
 
-Foreigner >= 1.0.0 use foreigner-matcher ~> 0.2
+Foreigner >= 1.0.0 use foreigner-matcher ~> 0.2.0
 
-Foreigner ~> 0.9 use foreigner-matcher ~> 0.1
+Foreigner ~> 0.9 use foreigner-matcher ~> 0.1.1
 
 **Rails 2.3**
 
-Use foreigner-matcher ~> 0.1
+Use foreigner-matcher ~> 0.1.1
 
 ## Installation
 
@@ -22,7 +22,7 @@ Use foreigner-matcher ~> 0.1
 
 For installation with bundler, add the following to the approrpriate group in your Gemfile:
 
-    gem "foreigner-matcher", "~> 0.2", :require => nil
+    gem "foreigner-matcher", "~> 0.2.0", :require => nil
 
 For installation without bundler in Rails 2.3, add the following to your config/environments/test.rb:
 
