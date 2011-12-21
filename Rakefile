@@ -55,8 +55,7 @@ namespace :db do
       end
 
       require 'foreigner'
-      foreigner_railtie = Foreigner::Railtie.new
-      foreigner_railtie.run_initializers(foreigner_railtie)
+      Foreigner::Railtie.instance.run_initializers
 
       puts "\nCreating foreign keys"
       print_foreign_key_creation('user_logins') { conn.add_foreign_key(:user_logins, :users, :dependent => :nullify) }
