@@ -9,7 +9,7 @@ end
 
 group :test do
   gem "rspec",        "~> 2.7.0"
-  gem "activerecord", "~> 3.0.0"
-  gem "railties",     "~> 3.0.0"
+  gem "activerecord", "~> 3.1.0"
+  gem "railties",     "~> 3.1.0"
   gem "mysql2",       "~> 0.2.7"
 end
