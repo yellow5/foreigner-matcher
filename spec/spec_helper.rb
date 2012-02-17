@@ -17,4 +17,6 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 # Configure rspec options
 RSpec.configure do |config|
   config.mock_framework = :mocha
+
+  config.include(ForeignKeyDefinitionHelpers)
 end
