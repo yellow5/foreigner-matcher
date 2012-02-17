@@ -13,3 +13,8 @@ Foreigner::Railtie.instance.run_initializers
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+
+# Configure rspec options
+RSpec.configure do |config|
+  config.mock_framework = :mocha
+end
