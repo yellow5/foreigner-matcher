@@ -11,14 +11,14 @@ describe Search do
       stub_fkd_to_s_with('expected fk')
       matcher = have_foreign_key_for(:searches)
       matcher.matches?(subject)
-      matcher.failure_message_for_should.should == "expected #{subject.connection.foreign_keys('searches')} to include expected fk"
+      matcher.failure_message_for_should.should == "expected #{foreign_keys_for('searches')} to include expected fk"
     end
 
     it 'should set failure_message_for_should_not message' do
       stub_fkd_to_s_with('unexpected fk')
       matcher = have_foreign_key_for(:users, :name => 'user_search_special_fk', :dependent => :delete)
       matcher.matches?(subject)
-      matcher.failure_message_for_should_not.should == "expected #{subject.connection.foreign_keys('searches')} to exclude unexpected fk"
+      matcher.failure_message_for_should_not.should == "expected #{foreign_keys_for('searches')} to exclude unexpected fk"
     end
   end
 
