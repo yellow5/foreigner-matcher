@@ -23,7 +23,11 @@ describe UserType do
   end
 
   describe 'matcher' do
-    it { should have_foreign_key_for(:user) }
-    it { should have_foreign_key_for(:users) }
+    before do
+      @options = postgresql_db?  ? { :dependent => :restrict } : {}
+    end
+
+    it { should have_foreign_key_for(:user, @options) }
+    it { should have_foreign_key_for(:users, @options) }
   end
 end
