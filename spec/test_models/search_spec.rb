@@ -8,17 +8,17 @@ describe Search do
     end
 
     it 'should set failure_message_for_should message' do
-      matcher     = have_foreign_key_for(:searches)
-      expected_fk = Foreigner::ConnectionAdapters::ForeignKeyDefinition.new('searches', 'searches', :primary_key => 'id', :column => 'search_id', :name => 'searches_search_id_fk')
+      stub_fkd_to_s_with('expected fk')
+      matcher = have_foreign_key_for(:searches)
       matcher.matches?(subject)
-      matcher.failure_message_for_should.should == "expected #{subject.connection.foreign_keys('searches')} to include #{expected_fk}"
+      matcher.failure_message_for_should.should == "expected #{subject.connection.foreign_keys('searches')} to include expected fk"
     end
 
     it 'should set failure_message_for_should_not message' do
-      matcher     = have_foreign_key_for(:users, :name => 'user_search_special_fk', :dependent => :delete)
-      expected_fk = Foreigner::ConnectionAdapters::ForeignKeyDefinition.new('searches', 'users', :primary_key => 'id', :column => 'user_id', :name => 'user_search_special_fk', :dependent => :delete)
+      stub_fkd_to_s_with('unexpected fk')
+      matcher = have_foreign_key_for(:users, :name => 'user_search_special_fk', :dependent => :delete)
       matcher.matches?(subject)
-      matcher.failure_message_for_should_not.should == "expected #{subject.connection.foreign_keys('searches')} to exclude #{expected_fk}"
+      matcher.failure_message_for_should_not.should == "expected #{subject.connection.foreign_keys('searches')} to exclude unexpected fk"
     end
   end
 

@@ -9,15 +9,15 @@ describe TableWithoutForeignKey do
     end
 
     it 'should set failure_message_for_should message' do
-      expected_fk = Foreigner::ConnectionAdapters::ForeignKeyDefinition.new('table_without_foreign_keys', 'users', :primary_key => 'id', :column => 'user_id', :name => 'table_without_foreign_keys_user_id_fk')
+      stub_fkd_to_s_with('expected fk')
       matcher.matches?(subject)
-      matcher.failure_message_for_should.should == "expected foreign keys to include #{expected_fk}"
+      matcher.failure_message_for_should.should == "expected foreign keys to include expected fk"
     end
 
     it 'should set failure_message_for_should_not message' do
-      expected_fk = Foreigner::ConnectionAdapters::ForeignKeyDefinition.new('table_without_foreign_keys', 'users', :primary_key => 'id', :column => 'user_id', :name => 'table_without_foreign_keys_user_id_fk')
+      stub_fkd_to_s_with('unexpected fk')
       matcher.matches?(subject)
-      matcher.failure_message_for_should_not.should == "expected foreign keys to exclude #{expected_fk}"
+      matcher.failure_message_for_should_not.should == "expected foreign keys to exclude unexpected fk"
     end
   end
 
