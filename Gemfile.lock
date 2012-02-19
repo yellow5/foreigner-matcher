@@ -89,4 +89,5 @@ DEPENDENCIES
   mysql2 (~> 0.3.0)
   pg (~> 0.13.0)
   railties (~> 3.2.0)
+  rake
   rspec (~> 2.8.0)

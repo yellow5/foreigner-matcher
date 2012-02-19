@@ -8,6 +8,7 @@ group :development do
 end
 
 group :test do
+  gem "rake"
   gem "rspec",        "~> 2.8.0"
   gem "mocha",        "~> 0.10.4"
   gem "activerecord", "~> 3.2.0"
