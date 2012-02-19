@@ -7,3 +7,4 @@ doc/*
 spec/config/database.yml
 *.swp
 *.rbc
+.rbx
