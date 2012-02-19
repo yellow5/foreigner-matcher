@@ -1,0 +1,9 @@
+mysql:
+  adapter: mysql2
+  database: foreigner-matcher_test
+  username: root
+  encoding: utf8
+postgres:
+  adapter: postgresql
+  database: foreigner-matcher_test
+  username: postgres
