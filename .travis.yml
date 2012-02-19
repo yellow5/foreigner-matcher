@@ -4,4 +4,10 @@ rvm:
   - 1.9.2
   - 1.9.3
   - ree
+env:
+  - DB=mysql
+  - DB=postgres
+before_script:
+  - "mysql -e 'create database foreigner-matcher_test;'"
+  - "psql -c 'create database foreigner-matcher_test;' -U postgres"
 script: bundle exec rspec spec
