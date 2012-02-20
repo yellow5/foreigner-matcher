@@ -5,15 +5,14 @@ require 'rails/railtie'
 require 'foreigner'
 
 # Open a database connection
-if ENV['TRAVIS']
-  db_configs = YAML::load(File.open("#{File.dirname(__FILE__)}/../ci/config/database.yml"))
-  db_adapter = ENV['DB']
-  db_adapter = 'jdbc-' + db_adapter if RUBY_PLATFORM == 'java'
-  db_config  = db_configs[db_adapter]
-  ActiveRecord::Base.configurations = db_configs
-else
-  db_config = YAML::load(File.open("#{File.dirname(__FILE__)}/config/database.yml"))
-end
+db_config_yml = File.dirname(__FILE__)
+db_config_yml << '/../ci' if ENV['TRAVIS']
+db_config_yml << '/config/database.yml'
+db_configs = YAML::load(File.open(db_config_yml))
+db_adapter = ENV['DB']
+db_adapter = 'jdbc-' + db_adapter if RUBY_PLATFORM == 'java'
+db_config  = db_configs[db_adapter]
+ActiveRecord::Base.configurations = db_configs
 ActiveRecord::Base.establish_connection(db_config)
 
 Foreigner::Railtie.instance.run_initializers

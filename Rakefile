@@ -22,15 +22,14 @@ namespace :db do
       end
 
       puts "Establishing connection to test db..."
-      if ENV['TRAVIS']
-        db_configs = YAML::load(File.open("#{File.dirname(__FILE__)}/ci/config/database.yml"))
-        db_adapter = ENV['DB']
-        db_adapter = 'jdbc-' + db_adapter if RUBY_PLATFORM == 'java'
-        db_config  = db_configs[db_adapter]
-        ActiveRecord::Base.configurations = db_configs
-      else
-        db_config = YAML::load(File.open("#{File.dirname(__FILE__)}/spec/config/database.yml"))
-      end
+      db_config_yml = File.dirname(__FILE__)
+      db_config_yml << (ENV['TRAVIS'] ? '/ci' : '/spec')
+      db_config_yml << '/config/database.yml'
+      db_configs = YAML::load(File.open(db_config_yml))
+      db_adapter = ENV['DB']
+      db_adapter = 'jdbc-' + db_adapter if RUBY_PLATFORM == 'java'
+      db_config  = db_configs[db_adapter]
+      ActiveRecord::Base.configurations = db_configs
       ActiveRecord::Base.establish_connection(db_config)
       conn = ActiveRecord::Base.connection
       puts "Connected to #{db_config['database']} via a #{db_config['adapter']} connector"
