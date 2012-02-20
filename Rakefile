@@ -24,7 +24,9 @@ namespace :db do
       puts "Establishing connection to test db..."
       if ENV['TRAVIS']
         db_configs = YAML::load(File.open("#{File.dirname(__FILE__)}/ci/config/database.yml"))
-        db_config  = db_configs[ENV['DB']]
+        db_adapter = ENV['DB']
+        db_adapter = 'jdbc-' + db_adapter if RUBY_PLATFORM == 'java'
+        db_config  = db_configs[db_adapter]
         ActiveRecord::Base.configurations = db_configs
       else
         db_config = YAML::load(File.open("#{File.dirname(__FILE__)}/spec/config/database.yml"))
