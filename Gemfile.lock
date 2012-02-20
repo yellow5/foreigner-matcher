@@ -38,6 +38,7 @@ GEM
     i18n (0.6.0)
     journey (1.0.1)
     json (1.6.5)
+    json (1.6.5-java)
     kramdown (0.13.4)
     metaclass (0.0.1)
     mocha (0.10.4)
@@ -79,6 +80,7 @@ GEM
     tzinfo (0.3.31)
 
 PLATFORMS
+  java
   ruby
 
 DEPENDENCIES
