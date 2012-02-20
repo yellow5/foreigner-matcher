@@ -45,7 +45,6 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.0.4)
     mysql2 (0.3.11)
-    pg (0.13.1)
     rack (1.4.1)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -89,7 +88,6 @@ DEPENDENCIES
   kramdown (~> 0.13.2)
   mocha (~> 0.10.4)
   mysql2 (~> 0.3.0)
-  pg (~> 0.13.0)
   railties (~> 3.2.0)
   rake
   rspec (~> 2.8.0)

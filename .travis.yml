@@ -10,7 +10,7 @@ rvm:
   - jruby-19mode
 env:
   - DB=mysql
-  - DB=postgres
+  #- DB=postgres
 before_script:
   - "mysql -e 'create database `foreigner-matcher_test`;'"
   - "psql -c 'create database \"foreigner-matcher_test\";' -U postgres"
