@@ -44,7 +44,6 @@ GEM
     journey (1.0.1)
     json (1.6.5)
     json (1.6.5-java)
-    kramdown (0.13.4)
     metaclass (0.0.1)
     mocha (0.10.4)
       metaclass (~> 0.0.1)
@@ -91,7 +90,6 @@ DEPENDENCIES
   activerecord (~> 3.2.0)
   activerecord-jdbcmysql-adapter
   foreigner-matcher!
-  kramdown (~> 0.13.2)
   mocha (~> 0.10.4)
   mysql2 (~> 0.3.0)
   railties (~> 3.2.0)
