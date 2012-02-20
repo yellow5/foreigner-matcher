@@ -82,10 +82,13 @@ These examples will also work passing <tt>:user</tt> as the table name. Why? The
 
 ## My Testing Environment
 
-Specs have been run with [Ruby 1.9.2p290](http://www.ruby-lang.org/), [Ruby Enterprise Edition 2011.03](http://www.rubyenterpriseedition.com/), and [Rubinius](http://rubini.us/) with the following combinations:
+The project is tested on [Travis-CI](https://github.com/travis-ci/travis-ci). The rubies and databases that the matcher is regularly verified with can be seen in [.travis.yml](https://github.com/yellow5/foreigner-matcher/blob/master/.travis.yml)
 
-* ActiveRecord ~> 3.0.0, Rspec ~> 2.6.0, Foreigner >= 1.0.0
-* ActiveRecord ~> 2.3.11, Rsepc ~> 1.3.2, Foreigner ~> 0.9.1
+The current gems that are tested:
+
+* ActiveRecord ~> 3.2.0, Rspec ~> 2.8.0, Foreigner >= 1.00
+
+My hope is to regularly test legacy gem combinations in the future.
 
 ## Copyright
 
