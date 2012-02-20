@@ -1,5 +1,7 @@
-require 'bundler'
-Bundler::GemHelper.install_tasks
+unless ENV['TRAVIS']
+  require 'bundler'
+  Bundler::GemHelper.install_tasks
+end
 
 namespace :db do
   namespace :test do
