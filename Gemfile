@@ -13,6 +13,13 @@ group :test do
   gem "mocha",        "~> 0.10.4"
   gem "activerecord", "~> 3.2.0"
   gem "railties",     "~> 3.2.0"
-  gem "mysql2",       "~> 0.3.0"
-  #gem "pg",           "~> 0.13.0"
+
+  platforms :ruby do
+    gem "mysql2",     "~> 0.3.0"
+    #gem "pg",         "~> 0.13.0"
+  end
+
+  platforms :jruby do
+    gem "activerecord-jdbcmysql-adapter"
+  end
 end
