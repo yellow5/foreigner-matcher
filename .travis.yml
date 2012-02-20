@@ -14,5 +14,5 @@ env:
 before_script:
   - "mysql -e 'create database `foreigner-matcher_test`;'"
   #- "psql -c 'create database \"foreigner-matcher_test\";' -U postgres"
-  - bundle exec rake db:test:reset
+  - bundle exec rake db:test:reset --trace
 script: bundle exec rspec spec
