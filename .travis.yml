@@ -10,13 +10,11 @@ rvm:
   - jruby-19mode
 env:
   - DB=mysql
-  #- DB=postgres
 gemfile:
   - Gemfile
   - ci/gemfiles/rspec2_8_rails3_1.gemfile
   - ci/gemfiles/rspec2_8_rails3_0.gemfile
 before_script:
   - "mysql -e 'create database `foreigner-matcher_test`;'"
-  #- "psql -c 'create database \"foreigner-matcher_test\";' -U postgres"
   - bundle exec rake db:test:reset --trace
 script: bundle exec rspec -b
