@@ -14,9 +14,6 @@ gemfile:
   - Gemfile
   - ci/gemfiles/rspec2_8_rails3_1.gemfile
   - ci/gemfiles/rspec2_8_rails3_0.gemfile
-  - ci/gemfiles/rspec2_7_rails3_2.gemfile
-  - ci/gemfiles/rspec2_7_rails3_1.gemfile
-  - ci/gemfiles/rspec2_7_rails3_0.gemfile
 before_script:
   - "mysql -e 'create database `foreigner-matcher_test`;'"
   - bundle exec rake db:test:reset --trace
