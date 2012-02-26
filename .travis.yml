@@ -11,6 +11,9 @@ rvm:
 env:
   - DB=mysql
   #- DB=postgres
+gemfile:
+  - Gemfile
+  - ci/gemfiles/rspec2_8_rails3_1.gemfile
 before_script:
   - "mysql -e 'create database `foreigner-matcher_test`;'"
   #- "psql -c 'create database \"foreigner-matcher_test\";' -U postgres"
