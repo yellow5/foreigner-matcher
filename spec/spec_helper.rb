@@ -15,11 +15,17 @@ db_config  = db_configs[db_adapter]
 ActiveRecord::Base.configurations = db_configs
 ActiveRecord::Base.establish_connection(db_config)
 
-Foreigner::Railtie.instance.run_initializers
-
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
+
+include ActiveRecordVersionHelpers
+if active_record_version > 3.0
+  Foreigner::Railtie.instance.run_initializers
+else
+  foreigner_railtie = Foreigner::Railtie.new
+  foreigner_railtie.run_initializers(foreigner_railtie)
+end
 
 # Configure rspec options
 RSpec.configure do |config|

@@ -63,8 +63,17 @@ namespace :db do
         end
       end
 
+      # Include ActiveRecordVersionHelpers
+      require "#{File.dirname(__FILE__)}/spec/support/active_record_version_helpers.rb"
+      include ActiveRecordVersionHelpers
+
       require 'foreigner'
-      Foreigner::Railtie.instance.run_initializers
+      if active_record_version > 3.0
+        Foreigner::Railtie.instance.run_initializers
+      else
+        foreigner_railtie = Foreigner::Railtie.new
+        foreigner_railtie.run_initializers(foreigner_railtie)
+      end
 
       puts "\nCreating foreign keys"
       print_foreign_key_creation('user_logins') { conn.add_foreign_key(:user_logins, :users, :dependent => :nullify) }
