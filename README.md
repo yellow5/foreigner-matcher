@@ -1,5 +1,7 @@
 # foreigner-matcher
 
+[![Build Status](https://secure.travis-ci.org/yellow5/foreigner-matcher.png?branch=master)](http://travis-ci.org/yellow5/foreigner-matcher)
+
 RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner), inspired by [Remarkable](https://github.com/remarkable/remarkable) ActiveRecord matchers.
 
 ## Version Information
