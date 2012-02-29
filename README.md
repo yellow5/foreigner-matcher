@@ -6,9 +6,9 @@ RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner
 
 ## Version Information
 
-Note that the matcher is exactly the same between 0.1.1 and 0.2.0; all that changes is the Foreigner dependency. Why, you ask? Foreigner >= 1.0.0 is Rails 3 only!
+Note that the matcher is exactly the same between 0.1.1 and 0.2.0; all that changes is the Foreigner dependency. Why, you ask? Foreigner >= 1.0.0 is Rails 3.x only!
 
-**Rails 3**
+**Rails 3.x**
 
 Foreigner >= 1.0.0 use foreigner-matcher ~> 0.2.0
 
