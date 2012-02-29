@@ -89,8 +89,8 @@ The project is tested on [Travis-CI](https://github.com/travis-ci/travis-ci). Th
 The current gems that are tested:
 
 * ActiveRecord ~> 3.2.0, Rspec ~> 2.8.0, Foreigner >= 1.00
-
-My hope is to regularly test legacy gem combinations in the future.
+* ActiveRecord ~> 3.1.0, Rspec ~> 2.8.0, Foreigner >= 1.00
+* ActiveRecord ~> 3.0.0, Rspec ~> 2.8.0, Foreigner >= 1.00
 
 ## Copyright
 
