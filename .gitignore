@@ -9,3 +9,4 @@ spec/config/database.yml
 *.rbc
 .rbx
 Gemfile.lock
+ci/gemfiles/*.gemfile.lock
