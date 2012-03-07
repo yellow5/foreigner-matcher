@@ -12,9 +12,11 @@ group :test do
 
   platforms :ruby do
     gem "mysql2",     "~> 0.3.0"
+    gem "pg",         "~> 0.13.2"
   end
 
   platforms :jruby do
     gem "activerecord-jdbcmysql-adapter"
+    gem "activerecord-jdbcpostgresql-adapter"
   end
 end
