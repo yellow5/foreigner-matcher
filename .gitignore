@@ -8,5 +8,3 @@ spec/config/database.yml
 *.swp
 *.rbc
 .rbx
-Gemfile.lock
-ci/gemfiles/*.gemfile.lock
