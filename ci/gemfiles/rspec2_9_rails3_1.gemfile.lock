@@ -1,7 +1,7 @@
 PATH
   remote: /home/cameron/projects/my_stuff/foreigner-matcher
   specs:
-    foreigner-matcher (0.2.0)
+    foreigner-matcher (0.2.1)
       foreigner (>= 1.0.0)
 
 GEM
