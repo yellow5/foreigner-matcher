@@ -37,7 +37,7 @@ namespace :db do
       puts "Connected to #{db_config['database']} via a #{db_config['adapter']} connector"
 
       puts "\nDropping test tables, if they exist"
-      %w( user_logins user_types comments searches special_user_records table_without_foreign_keys users ).each do |test_table|
+      %w( default_options user_logins user_types comments searches special_user_records table_without_foreign_keys users ).each do |test_table|
         print "\tDropping #{test_table}..."
         conn.execute("drop table if exists #{test_table}")
         print "done\n"
@@ -55,7 +55,7 @@ namespace :db do
           t.integer :special_user_id
         end
       end
-      [ :user_logins, :user_types, :comments, :searches, :table_without_foreign_keys ].each do |user_table|
+      [ :default_options, :user_logins, :user_types, :comments, :searches, :table_without_foreign_keys ].each do |user_table|
         print_table_creation(user_table) do
           conn.create_table(user_table) do |t|
             t.integer :user_id
@@ -76,11 +76,24 @@ namespace :db do
       end
 
       puts "\nCreating foreign keys"
-      print_foreign_key_creation('user_logins') { conn.add_foreign_key(:user_logins, :users, :dependent => :nullify) }
-      print_foreign_key_creation('user_types') { conn.add_foreign_key(:user_types, :users, :dependent => :restrict) }
-      print_foreign_key_creation('comments') { conn.add_foreign_key(:comments, :users, :dependent => :delete) }
-      print_foreign_key_creation('searches') { conn.add_foreign_key(:searches, :users, :name => "user_search_special_fk", :dependent => :delete) }
-      print_foreign_key_creation('special_user_records') { conn.add_foreign_key(:special_user_records, :users, :column => "special_user_id", :dependent => :delete) }
+      print_foreign_key_creation('default_options') do
+        conn.add_foreign_key(:default_options, :users)
+      end
+      print_foreign_key_creation('user_logins') do
+        conn.add_foreign_key(:user_logins, :users, :dependent => :nullify)
+      end
+      print_foreign_key_creation('user_types') do
+        conn.add_foreign_key(:user_types, :users, :dependent => :restrict)
+      end
+      print_foreign_key_creation('comments') do
+        conn.add_foreign_key(:comments, :users, :dependent => :delete)
+      end
+      print_foreign_key_creation('searches') do
+        conn.add_foreign_key(:searches, :users, :name => "user_search_special_fk", :dependent => :delete)
+      end
+      print_foreign_key_creation('special_user_records') do
+        conn.add_foreign_key(:special_user_records, :users, :column => "special_user_id", :dependent => :delete)
+      end
     end
   end
 end

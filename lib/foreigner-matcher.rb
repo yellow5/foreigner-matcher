@@ -28,9 +28,10 @@ module ForeignerMatcher # :nodoc:
     private
 
     def foreign_key_definition
-      defaults        = { :primary_key => "id", :column => "#{@parent.singularize}_id" }
-      defaults[:name] = "#{@child.class.table_name}_#{defaults[:column]}_fk"
-      full_options    = defaults.merge(@options)
+      defaults             = { :primary_key => "id", :column => "#{@parent.singularize}_id" }
+      defaults[:name]      = "#{@child.class.table_name}_#{defaults[:column]}_fk"
+      defaults[:dependent] = nil if postgresql_db?
+      full_options         = defaults.merge(@options)
       Foreigner::ConnectionAdapters::ForeignKeyDefinition.new(@child.class.table_name, @parent.pluralize, full_options)
     end
 
@@ -49,6 +50,10 @@ module ForeignerMatcher # :nodoc:
     def display_child_foreign_keys
       fks = child_foreign_keys
       fks.empty? ? 'foreign keys' : fks
+    end
+
+    def postgresql_db?
+      ActiveRecord::Base.connection.adapter_name.downcase == 'postgresql'
     end
   end
 
