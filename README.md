@@ -94,4 +94,4 @@ The current gems that are tested:
 
 ## Copyright
 
-Copyright (c) 2011 Cameron Dykes. See LICENSE.txt for further details.
+Copyright (c) 2011-2012 Cameron Dykes. See LICENSE.txt for further details.
