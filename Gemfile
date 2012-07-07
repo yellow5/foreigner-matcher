@@ -12,7 +12,7 @@ group :test do
 
   platforms :ruby do
     gem "mysql2",     "~> 0.3.0"
-    gem "pg",         "~> 0.13.2"
+    gem "pg",         "~> 0.14.0"
   end
 
   platforms :jruby do
