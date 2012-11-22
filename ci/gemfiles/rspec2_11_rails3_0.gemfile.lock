@@ -48,7 +48,7 @@ GEM
     json (1.7.5)
     json (1.7.5-java)
     metaclass (0.0.1)
-    mocha (0.12.7)
+    mocha (0.13.0)
       metaclass (~> 0.0.1)
     mysql2 (0.2.18)
     pg (0.14.1)
@@ -86,7 +86,7 @@ DEPENDENCIES
   activerecord-jdbcmysql-adapter
   activerecord-jdbcpostgresql-adapter
   foreigner-matcher!
-  mocha (~> 0.12.0)
+  mocha (~> 0.13.0)
   mysql2 (~> 0.2.0)
   pg (~> 0.14.0)
   railties (~> 3.0.0)
