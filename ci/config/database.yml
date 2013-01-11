@@ -3,16 +3,7 @@ mysql:
   database: foreigner-matcher_test
   username: root
   encoding: utf8
-jdbc-mysql:
-  adapter: jdbcmysql
-  database: foreigner-matcher_test
-  username: root
-  encoding: utf8
 postgres:
   adapter: postgresql
-  database: foreigner-matcher_test
-  username: postgres
-jdbc-postgres:
-  adapter: jdbcpostgresql
   database: foreigner-matcher_test
   username: postgres
