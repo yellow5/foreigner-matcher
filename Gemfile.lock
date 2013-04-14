@@ -87,6 +87,7 @@ GEM
     thor (0.18.1)
     tilt (1.3.7)
     tzinfo (0.3.37)
+    yard (0.8.6)
 
 PLATFORMS
   java
@@ -103,3 +104,4 @@ DEPENDENCIES
   railties (~> 3.2.0)
   rake
   rspec (~> 2.13.0)
+  yard

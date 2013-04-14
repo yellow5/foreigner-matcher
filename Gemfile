@@ -3,6 +3,10 @@ source "http://rubygems.org"
 # Specify your gem's dependencies in foreigner-matcher.gemspec
 gemspec
 
+group :development do
+  gem "yard"
+end
+
 group :test do
   gem "rake"
   gem "rspec",        "~> 2.13.0"
