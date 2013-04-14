@@ -59,20 +59,18 @@ module ForeignerMatcher # :nodoc:
 
   # Ensures that parent table has foreign key
   #
-  # * <b>parent</b> - The table to check for foreign key
-  # * <b>options</b> - Accepts any option that works with add_foreign_key in Foreigner
+  # @param [Symbol] parent the table to check for foreign key
+  # @param [Hash] options accepts any option that works with add_foreign_key in Foreigner
   #
-  # <em>Defaults</em>
-  #     :primary_key Column referenced on parent table (default: id)
-  #     :column Foreign key column (default: #{@parent.singluarize}_id)
-  #     :name Foreign key index name (default: #{@child.class.table_name}_#{@parent.singularize}_id)
+  # @option options [String] :primary_key ('id') column referenced on parent table
+  # @option options [String] :column (@parent.singluarize + '_id') foreign key column
+  # @option options [String] :name (@child.class.table_name + '_' + @parent.singularize + '_id') foreign key index name
   #
-  # <b>Examples</b>
+  # @example
   #   it { should have_foreign_key_for(:users) }
   #   it { should have_foreign_key_for(:users, :dependent => :delete) }
   #   it { should have_foreign_key_for(:users, :column => "some_column_name", :name => "users_some_column_name_fk") }
   #   it { should_not have_foreign_key_for(:users, :dependent => :nullify) }
-
   def have_foreign_key_for(parent, options={})
     HaveForeignKeyFor.new(parent, options)
   end
