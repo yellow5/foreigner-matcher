@@ -4,6 +4,7 @@
 .rspec
 pkg/*
 doc/*
+.yardoc
 spec/config/database.yml
 *.swp
 *.rbc
