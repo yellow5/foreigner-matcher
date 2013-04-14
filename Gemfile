@@ -5,7 +5,7 @@ gemspec
 
 group :test do
   gem "rake"
-  gem "rspec",        "~> 2.12.0"
+  gem "rspec",        "~> 2.13.0"
   gem "mocha",        "~> 0.13.0"
   gem "activerecord", "~> 3.2.0"
   gem "railties",     "~> 3.2.0"
