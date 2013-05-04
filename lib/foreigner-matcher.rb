@@ -36,7 +36,7 @@ module ForeignerMatcher # :nodoc:
     end
 
     def child_foreign_keys
-      @child.connection.foreign_keys(@child.class.table_name)
+      @child.class.connection.foreign_keys(@child.class.table_name)
     end
 
     def ordered_options
@@ -53,7 +53,7 @@ module ForeignerMatcher # :nodoc:
     end
 
     def postgresql_db?
-      ActiveRecord::Base.connection.adapter_name.downcase == 'postgresql'
+      @child.class.connection.adapter_name.downcase == 'postgresql'
     end
   end
 
