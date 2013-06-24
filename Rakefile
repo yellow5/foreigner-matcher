@@ -36,7 +36,7 @@ namespace :db do
       puts "Connected to #{db_config['database']} via a #{db_config['adapter']} connector"
 
       puts "\nDropping test tables, if they exist"
-      %w( default_options user_logins user_types comments searches special_user_records table_without_foreign_keys users ).each do |test_table|
+      %w( default_options user_logins comments searches special_user_records table_without_foreign_keys user_types users ).each do |test_table|
         print "\tDropping #{test_table}..."
         conn.execute("drop table if exists #{test_table}")
         print "done\n"
@@ -52,6 +52,7 @@ namespace :db do
       print_table_creation('special_user_records') do
         conn.create_table(:special_user_records) do |t|
           t.integer :special_user_id
+          t.integer :special_user_type_id
         end
       end
       [ :default_options, :user_logins, :user_types, :comments, :searches, :table_without_foreign_keys ].each do |user_table|
@@ -92,6 +93,7 @@ namespace :db do
       end
       print_foreign_key_creation('special_user_records') do
         conn.add_foreign_key(:special_user_records, :users, :column => "special_user_id", :dependent => :delete)
+        conn.add_foreign_key(:special_user_records, :user_types, :column => "special_user_type_id", :name => "special_user_type_fk")
       end
     end
   end
