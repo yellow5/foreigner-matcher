@@ -28,11 +28,15 @@ module ForeignerMatcher # :nodoc:
     private
 
     def foreign_key_definition
-      defaults             = { :primary_key => "id", :column => "#{@parent.singularize}_id" }
+      defaults             = { :primary_key => "id", :column => foreign_key_definition_column_name }
       defaults[:name]      = "#{@child.class.table_name}_#{defaults[:column]}_fk"
       defaults[:dependent] = nil if postgresql_db?
       full_options         = defaults.merge(@options)
       Foreigner::ConnectionAdapters::ForeignKeyDefinition.new(@child.class.table_name, @parent.pluralize, full_options)
+    end
+
+    def foreign_key_definition_column_name
+      @options[:column] || "#{@parent.singularize}_id"
     end
 
     def child_foreign_keys
