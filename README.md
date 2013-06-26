@@ -8,9 +8,9 @@ RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner
 
 ## Version Information
 
-Note that the matcher is exactly the same between 0.1.1 and 0.2.0; all that changes is the Foreigner dependency. Why, you ask? Foreigner >= 1.0.0 is Rails 3.x only!
+Note that the matcher is exactly the same between 0.1.1 and 0.2.0; all that changes is the Foreigner dependency. Why, you ask? Foreigner >= 1.0.0 is Rails 3.x and higher only!
 
-**Rails 3.x**
+**Rails 4.x + 3.x**
 
 Foreigner >= 1.0.0 use foreigner-matcher ~> 0.2.0
 
@@ -90,6 +90,7 @@ The project is tested on [Travis-CI](https://github.com/travis-ci/travis-ci). Th
 
 The current gems that are tested:
 
+* ActiveRecord ~> 4.0.0, Rspec ~> 2.13.0, Foreigner >= 1.00
 * ActiveRecord ~> 3.2.0, Rspec ~> 2.13.0, Foreigner >= 1.00
 * ActiveRecord ~> 3.1.0, Rspec ~> 2.13.0, Foreigner >= 1.00
 * ActiveRecord ~> 3.0.0, Rspec ~> 2.13.0, Foreigner >= 1.00
