@@ -1,4 +1,5 @@
 *.gem
+ci/gemfiles/*.lock
 Gemfile.lock
 .bundle
 .rvmrc
