@@ -1,6 +1,7 @@
 require 'yaml'
 require 'active_record'
 require 'foreigner-matcher'
+require 'rails'
 require 'rails/railtie'
 require 'foreigner'
 

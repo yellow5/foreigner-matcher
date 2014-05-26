@@ -9,6 +9,7 @@ namespace :db do
     task :reset do
       require 'yaml'
       require 'active_record'
+      require 'rails'
       require 'rails/railtie'
 
       def print_table_creation(new_table)
