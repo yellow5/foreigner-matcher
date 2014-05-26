@@ -7,6 +7,10 @@ group :development do
   gem "yard"
 end
 
+group :development, :test do
+  gem "pry"
+end
+
 group :test do
   gem "rake"
   gem "rspec",        "~> 2.13.0"
