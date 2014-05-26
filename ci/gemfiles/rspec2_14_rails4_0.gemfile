@@ -1,7 +1,7 @@
 source "http://rubygems.org"
 
 # Specify your gem's dependencies in foreigner-matcher.gemspec
-gemspec
+gemspec :path => '../../'
 
 group :development do
   gem "yard"
