@@ -10,8 +10,6 @@ env:
 gemfile:
   - Gemfile
   - ci/gemfiles/rspec2_13_rails3_2.gemfile
-  - ci/gemfiles/rspec2_13_rails3_1.gemfile
-  - ci/gemfiles/rspec2_13_rails3_0.gemfile
 before_script:
   - ci/script/create_db.sh
   - bundle exec rake db:test:reset --trace
