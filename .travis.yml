@@ -9,7 +9,7 @@ env:
   - DB=postgres
 gemfile:
   - Gemfile
-  - ci/gemfiles/rspec2_13_rails3_2.gemfile
+  - ci/gemfiles/rspec2_14_rails3_2.gemfile
 before_script:
   - ci/script/create_db.sh
   - bundle exec rake db:test:reset --trace
