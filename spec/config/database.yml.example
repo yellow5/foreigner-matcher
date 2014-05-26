@@ -1,6 +1,17 @@
 # This example shows what should be included in your database.yml.
-database: foreigner-matcher_test
-adapter:  mysql2
-username: user
-password: password
-host:     localhost
+
+# For MySQL
+mysql:
+  database: foreigner-matcher_test
+  adapter:  mysql2
+  username: user
+  password: password
+  host:     localhost
+
+# For Postgres
+postgres:
+  database: foreigner-matcher_test
+  adapter:  postgresql
+  username: user
+  password: password
+  host:     localhost
