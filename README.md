@@ -90,11 +90,10 @@ The project is tested on [Travis-CI](https://github.com/travis-ci/travis-ci). Th
 
 The current gems that are tested:
 
-* ActiveRecord ~> 4.0.0, Rspec ~> 2.13.0, Foreigner >= 1.00
-* ActiveRecord ~> 3.2.0, Rspec ~> 2.13.0, Foreigner >= 1.00
-* ActiveRecord ~> 3.1.0, Rspec ~> 2.13.0, Foreigner >= 1.00
-* ActiveRecord ~> 3.0.0, Rspec ~> 2.13.0, Foreigner >= 1.00
+* ActiveRecord ~> 4.1.0, Rspec ~> 2.14.0, Foreigner >= 1.00
+* ActiveRecord ~> 4.0.0, Rspec ~> 2.14.0, Foreigner >= 1.00
+* ActiveRecord ~> 3.2.0, Rspec ~> 2.14.0, Foreigner >= 1.00
 
 ## Copyright
 
-Copyright (c) 2011-2013 Cameron Dykes. See LICENSE.txt for further details.
+Copyright (c) 2011-2014 Cameron Dykes. See LICENSE.txt for further details.
