@@ -17,11 +17,11 @@ module ForeignerMatcher # :nodoc:
       desc
     end
 
-    def failure_message_for_should
+    def failure_message
       "expected #{display_child_foreign_keys} to include #{foreign_key_definition}"
     end
 
-    def failure_message_for_should_not
+    def failure_message_when_negated
       "expected #{display_child_foreign_keys} to exclude #{foreign_key_definition}"
     end
 
