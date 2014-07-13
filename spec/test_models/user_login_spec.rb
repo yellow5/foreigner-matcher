@@ -7,18 +7,18 @@ describe UserLogin do
       matcher.description.should == 'have a foreign key for users with {:dependent=>:nullify}'
     end
 
-    it 'should set failure_message_for_should message' do
+    it 'should set failure_message message' do
       stub_fkd_to_s_with('expected fk')
       matcher = have_foreign_key_for(:user_logins)
       matcher.matches?(subject)
-      matcher.failure_message_for_should.should == "expected #{foreign_keys_for('user_logins')} to include expected fk"
+      matcher.failure_message.should == "expected #{foreign_keys_for('user_logins')} to include expected fk"
     end
 
-    it 'should set failure_message_for_should_not message' do
+    it 'should set failure_message_when_negated message' do
       stub_fkd_to_s_with('unexpected fk')
       matcher = have_foreign_key_for(:users, :dependent => :nullify)
       matcher.matches?(subject)
-      matcher.failure_message_for_should_not.should == "expected #{foreign_keys_for('user_logins')} to exclude unexpected fk"
+      matcher.failure_message_when_negated.should == "expected #{foreign_keys_for('user_logins')} to exclude unexpected fk"
     end
   end
 

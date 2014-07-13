@@ -29,6 +29,13 @@ end
 
 # Configure rspec options
 RSpec.configure do |config|
+
+  # Explicitly allow the old `object.should` syntax. We disallow the new
+  # `expect(object)` syntax for now to enforce consistency.
+  config.expect_with :rspec do |c|
+    c.syntax = :should
+  end
+
   config.mock_framework = :mocha
 
   config.include(ConnectionHelpers)
