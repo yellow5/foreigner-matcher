@@ -8,11 +8,13 @@ RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner
 
 ## Version Information
 
-Note that the matcher is exactly the same between 0.1.1 and 0.2.0; all that changes is the Foreigner dependency. Why, you ask? Foreigner >= 1.0.0 is Rails 3.x and higher only!
+The 0.3.x verison should accompany use of [RSpec 3.0](https://github.com/rspec/rspec). The same version should be safe to use with RSpec 2.14.x as well.
+
+Note that Foreigner >= 1.0.0 is Rails 3.x and higher only!
 
 **Rails 4.x + 3.x**
 
-Foreigner >= 1.0.0 use foreigner-matcher ~> 0.2.0
+Foreigner >= 1.0.0 use foreigner-matcher ~> 0.3.0
 
 Foreigner ~> 0.9 use foreigner-matcher ~> 0.1.1
 
@@ -26,7 +28,7 @@ Use foreigner-matcher ~> 0.1.1
 
 For installation with bundler, add the following to the approrpriate group in your Gemfile:
 
-    gem "foreigner-matcher", "~> 0.2.0", :require => nil
+    gem "foreigner-matcher", "~> 0.3.0", :require => nil
 
 For installation without bundler in Rails 2.3, add the following to your config/environments/test.rb:
 
@@ -90,8 +92,11 @@ The project is tested on [Travis-CI](https://github.com/travis-ci/travis-ci). Th
 
 The current gems that are tested:
 
+* ActiveRecord ~> 4.1.0, Rspec ~> 3.0.0, Foreigner >= 1.00
 * ActiveRecord ~> 4.1.0, Rspec ~> 2.14.0, Foreigner >= 1.00
+* ActiveRecord ~> 4.0.0, Rspec ~> 3.0.0, Foreigner >= 1.00
 * ActiveRecord ~> 4.0.0, Rspec ~> 2.14.0, Foreigner >= 1.00
+* ActiveRecord ~> 3.2.0, Rspec ~> 3.0.0, Foreigner >= 1.00
 * ActiveRecord ~> 3.2.0, Rspec ~> 2.14.0, Foreigner >= 1.00
 
 ## Copyright
