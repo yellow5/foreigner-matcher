@@ -13,7 +13,7 @@ end
 
 group :test do
   gem "rake"
-  gem "rspec",        "~> 2.14.0"
+  gem "rspec",        "~> 3.0.0"
   gem "mocha",        "~> 1.1.0"
   gem "activerecord", "~> 4.1.0"
   gem "railties",     "~> 4.1.0"
