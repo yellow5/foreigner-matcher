@@ -1,3 +1,5 @@
+
+
 # foreigner-matcher
 
 [![Gem Version](https://badge.fury.io/rb/foreigner-matcher.png)](http://badge.fury.io/rb/foreigner-matcher)
@@ -5,6 +7,10 @@
 [![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/yellow5/foreigner-matcher)
 
 RSpec matcher for the [Foreigner gem](https://github.com/matthuhiggins/foreigner), inspired by [Remarkable](https://github.com/remarkable/remarkable) ActiveRecord matchers.
+
+## No Longer Maintained
+
+Since foreigner was rendered obsolete by Rails v4.2 the matcher is obsolete along with it. It has been archived to remain available for gem usage by old projects.
 
 ## Version Information
 
